@@ -15,7 +15,7 @@ public class MovementPlayer : MonoBehaviour
 
     private Rigidbody2D currentPlatformRb;
     private Vector2 platformVelocity;
-    private Plarform currentPlatform;
+    private Platform currentPlatform;
 
     private void Awake()
     {
@@ -56,7 +56,7 @@ public class MovementPlayer : MonoBehaviour
         if (IsGrounded() && currentPlatformRb != null)
         {
             platformVelocity = currentPlatformRb.velocity;
-            playerVelocaity += new Vector2(platformVelocity.x, 0);
+            rb.velocity += new Vector2(platformVelocity.x, 0);
         }
         else
         {
@@ -86,7 +86,7 @@ public class MovementPlayer : MonoBehaviour
         Platform platform = collision.gameObject.GetComponent<Platform>();
         if (platform != null)
         {
-            currentPlatformRb = platform;
+            currentPlatform = platform;
             currentPlatformRb = collision.rigidbody;
         }
     }
