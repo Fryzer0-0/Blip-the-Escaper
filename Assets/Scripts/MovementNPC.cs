@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class MovementTutel : MonoBehaviour
+public class MovementNPC : MonoBehaviour
 {
     [Header("Patrol Points")]
     public Transform pointA;
